@@ -1,7 +1,8 @@
 header {
   height: 400px;
   width: 100%;
-  background-image: url("../images/headerbg.png");
+  background-color: #f4f1ec;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 }
 
 .user {
