@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -64,14 +65,21 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1>What are you humming about?</h1>
-      <h2>Tweet1</h2>
-      <h2>Tweet2</h2>
-      <h2>Tweet3</h2>
-      <h2>Tweet4</h2>
-      <h2>Tweet5</h2>
-      <h2>Tweet6</h2>
-      <h2>Tweet7</h2>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets/">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <div class="tweet-info">
+              <button type="submit" class="tweet-button">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"
+                >140</output
+              >
+            </div>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
