@@ -26,3 +26,9 @@ i {
   align-items: center;
   justify-content: center;
 }
+
+main {
+  width: 90%;
+  background-image: url("../images/headerbg.png");
+  margin: auto;
+}
