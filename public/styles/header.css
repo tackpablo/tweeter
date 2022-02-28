@@ -1,0 +1,12 @@
+header {
+  height: 400px;
+  width: 100%;
+  background-image: url("../images/headerbg.png");
+}
+
+.user {
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  display: flex;
+}
