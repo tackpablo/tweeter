@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  height: 120px;
+  color: #ffff;
+  background-color: #4056a1;
+  padding: 0 1.5em;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+i {
+  color: red;
+}
+
+.logo {
+  font-family: "Bungee";
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
