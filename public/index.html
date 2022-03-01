@@ -58,17 +58,20 @@
 
     <!-- user header -->
     <header>
-      <div class="user">
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div class="user">
-        <h2>Amy Mansell</h2>
+      <div class="header-container">
+        <div class="user">
+          <img src="/images/profile-hex.png" />
+        </div>
+        <br />
+        <div class="user">
+          <h2>Amy Mansell</h2>
+        </div>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/">
@@ -84,6 +87,28 @@
           </div>
         </form>
       </section>
+
+      <!-- Tweet containers-->
+        <article class="new-tweet-container">
+          <header class="user-info">
+            <div class="info">
+              <i class="fa-solid fa-ghost"></i>
+              <h3>Newton</h3>
+            </div>
+            <span class="handle">@SirIsaac</span>
+          </header>
+          <div class="placehold">If I have seen further it is by standing on the shoulder of giants.</div>
+          <textarea name="text" id="tweet-text"></textarea>
+          <footer class="tweet-icons">
+            <span>10 days ago</span>
+            <div class="icons">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+    
     </main>
   </body>
 </html>

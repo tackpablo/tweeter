@@ -1,7 +1,7 @@
 $(document).ready(function () {
   console.log("Composer script loaded!");
 
-  $("#tweet-text").on("input", function (e) {
+  $("#tweet-text").on("input", function () {
     // console.log("this.value: ", $(this).val().length); //The this keyword is a reference to the text area
 
     // $(this) holds the element that you originally requested and gives access to jquery methods for the element
@@ -23,11 +23,11 @@ $(document).ready(function () {
 // Event Types
 // blur event - fires when element has lost focus - not useful
 
-// these do not account for when text is draged into area or user copy+pastes text (keypress not firing for non character values are not as important)
+// these do not account for when text is dragged into area or user copy+pastes text (keypress not firing for non character values are not as important)
 // keydown event - fires when key is pressed down, fired for all keys
 // keyup event - fires when key is released
 // keypress event - fires when key is pressed down, fired for character values only (not ALT/SHIFT/CTRL/etc)
 
 // change event - fires when alteration to element's value is committed - not fired for each alteration to element's value
 
-// input event - fires when any change to element occrs **
+// input event - fires when any change to element occurs **

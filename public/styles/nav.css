@@ -1,4 +1,5 @@
 .navbar {
+  top: 0;
   display: flex;
   height: 120px;
   color: #ffff;
@@ -11,7 +12,7 @@
   position: absolute;
 }
 
-i {
+.fa-angles-down {
   color: red;
 }
 

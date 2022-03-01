@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   font-weight: bold;
+  padding-bottom: 1em;
 }
 
 #tweet-text {
@@ -30,4 +31,61 @@
 
 .addRed {
   color: red;
+}
+
+.new-tweet-container {
+  padding: 1em;
+  border: 0.1em solid #545149;
+}
+
+.fa-ghost {
+  padding: 0 0.5em;
+}
+
+.handle {
+  padding: 0 0.5em;
+  color: #4056a1;
+}
+
+.placehold {
+  padding-left: 0.5em;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1em;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0.5em 0 0.5em;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 0.5em;
+}
+
+.fa-flag,
+.fa-retweet,
+.fa-heart {
+  padding: 0 0.1em;
+}
+
+.fa-flag:hover,
+.fa-retweet:hover,
+.fa-heart:hover {
+  color: #4056a1;
+}
+
+article:hover {
+  box-shadow: 0.1em 0.1em 0.1em 0.1em #4056a1;
 }
