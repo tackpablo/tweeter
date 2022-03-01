@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweets-container.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -47,10 +48,11 @@
 </head>
 
   <body>
+
     <!-- Top nav bar (fixed) -->
     <nav class="navbar">
       <span class="logo">tweeter</span>
-      <div class="toggle">
+      <div class="option">
         <span> <b>Write</b> a new tweet</span>
         <i class="fa-solid fa-angles-down"></i>
       </div>
@@ -71,7 +73,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-
+      <!-- New Tweet input -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/">
@@ -88,7 +90,7 @@
         </form>
       </section>
 
-      <!-- Tweet containers-->
+      <!-- New Tweet containers-->
         <article class="new-tweet-container">
           <header class="user-info">
             <div class="info">
@@ -97,8 +99,7 @@
             </div>
             <span class="handle">@SirIsaac</span>
           </header>
-          <div class="placehold">If I have seen further it is by standing on the shoulder of giants.</div>
-          <textarea name="text" id="tweet-text"></textarea>
+          <div class="tweet">If I have seen further it is by standing on the shoulder of giants.</div>
           <footer class="tweet-icons">
             <span>10 days ago</span>
             <div class="icons">
@@ -108,7 +109,7 @@
             </div>
           </footer>
         </article>
-    
+
     </main>
   </body>
 </html>
