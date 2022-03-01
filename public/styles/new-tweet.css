@@ -71,13 +71,13 @@
 .icons {
   display: flex;
   justify-content: flex-end;
-  padding: 0 0.5em;
+  padding-right: 0.5em;
 }
 
 .fa-flag,
 .fa-retweet,
 .fa-heart {
-  padding: 0 0.1em;
+  padding: 0 0.2em;
 }
 
 .fa-flag:hover,

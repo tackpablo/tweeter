@@ -9,7 +9,8 @@
   align-items: center;
   width: 100%;
   z-index: 1;
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
 }
 
 .fa-angles-down {
