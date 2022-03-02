@@ -93,6 +93,13 @@ $(document).ready(function () {
   $form.submit(function (event) {
     event.preventDefault();
 
+    const $textarea = $("textarea").val();
+    if ($textarea.length > 140)
+      return alert("Your tweet is longer than 140 characters!");
+
+    if ($textarea === "" || $textarea === null)
+      return alert("You can't submit an empty tweet you twit!");
+
     // making request for posting to database - this refers to form data
     const data = $(this).serialize();
     $.ajax({ method: "POST", url: "/tweets", data })
