@@ -38,7 +38,7 @@ const createTweetElement = function (tweetData) {
   // define the tweet element
   const $tweet = `      
   <article class="new-tweet-container">
-  <header class="user-info">
+  <header class="user-info"> 
     <div class="info">
     <img src="${tweetData.user.avatars}" />
       <h3>${tweetData.user.name}</h3>
@@ -86,4 +86,28 @@ const renderTweets = function (tweets) {
 $(document).ready(function () {
   // run to render the tweet
   renderTweets(tweetData);
+
+  // Form Submission Event Handler - prevent default of reloading page
+  const $form = $("#tweet-form");
+  $form.submit(function (event) {
+    event.preventDefault();
+
+    // making request for posting to database - this refers to form data
+    const data = $(this).serialize();
+    $.ajax({ method: "POST", url: "/tweets", data })
+      .then(() => {
+        // clears the form after post request
+        $("#tweet-text").val("");
+        // triggers on input change event to reload composer-char-counter logic
+        $("#tweet-text").trigger("input");
+        // serialized data
+        console.log(data);
+      })
+      .catch((error) => console.log(error)); // catches any error
+
+    // resets counter to 140 after request is sent
+    // $(this).find(".counter").text(140);
+    // resets counter color after request is sent
+    // $(this).find(".counter").removeClass("addRed");
+  });
 });
