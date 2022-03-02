@@ -33,19 +33,25 @@ const createTweetElement = function (tweetData) {
   // initialize element by adding article with class new-tweet-container (much like the original new container)
   // let $tweet = $("<article>").addClass("new-tweet-container");
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   // define the tweet element
   const $tweet = `      
   <article class="new-tweet-container">
   <header class="user-info"> 
     <div class="info">
-    <img src="${tweetData.user.avatars}" class="info-pic"/>
-      <h3>${tweetData.user.name}</h3>
+    <img src="${escape(tweetData.user.avatars)}" class="info-pic"/>
+      <h3>${escape(tweetData.user.name)}</h3>
     </div>
-    <span class="handle">${tweetData.user.handle}</span>
+    <span class="handle">${escape(tweetData.user.handle)}</span>
   </header>
-  <div class="tweet">${tweetData.content.text}</div>
+  <div class="tweet">${escape(tweetData.content.text)}</div>
   <footer class="tweet-icons">
-    <span>${timeago.format(tweetData.created_at)}</span>
+    <span>${timeago.format(escape(tweetData.created_at))}</span>
     <div class="icons">
       <i class="fa-solid fa-flag"></i>
       <i class="fa-solid fa-retweet"></i>
