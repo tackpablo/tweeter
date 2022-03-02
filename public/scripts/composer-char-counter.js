@@ -5,15 +5,16 @@ $(document).ready(function () {
     // console.log("this.value: ", $(this).val().length); //The this keyword is a reference to the text area
 
     // $(this) holds the element that you originally requested and gives access to jquery methods for the element
-    const length = $(this).val().length; // length refers to text area character length
+    const $form = $(this);
+    const length = $form.val().length; // length refers to text area character length
     const max = 140;
     const remainder = max - length;
-    const counter = $(this).parents(".new-tweet").find(".counter"); // we access the parent and come back down the DOM so that we can find the counter div - this is useful to use jquery functions like text in the next line
+    const counter = $form.parents(".new-tweet").find(".counter"); // we access the parent and come back down the DOM so that we can find the counter div - this is useful to use jquery functions like text in the next line
 
     counter.text(remainder); // changes the counter as you type - .text(ANYTHING) allows you to set a ANYTHING to the specific element (counter)
 
     // ternary expression for when the remaining characters left are less than 0 to add the color class
-    remainder < 0 ? counter.addClass("addRed") : counter.removeClass("addRed");
+    remainder < 0 ? counter.addClass("error") : counter.removeClass("error");
   });
   // $("#tweet-text").on("input", () => {
   //   console.log(this); //The this keyword here refers to something else! - refers to whole document due to arrow function usage

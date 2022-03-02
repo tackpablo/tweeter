@@ -27,6 +27,11 @@
 .info {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.info-pic {
+  padding-right: 0.5em;
 }
 
 .tweet-icons {

@@ -4,32 +4,30 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Test / driver code (temporary). Eventually will get this from the server.
-
-const tweetData = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-];
+// const tweetData = [
+//   {
+//     user: {
+//       name: "Newton",
+//       avatars: "https://i.imgur.com/73hZDYK.png",
+//       handle: "@SirIsaac",
+//     },
+//     content: {
+//       text: "If I have seen further it is by standing on the shoulders of giants",
+//     },
+//     created_at: 1461116232227,
+//   },
+//   {
+//     user: {
+//       name: "Descartes",
+//       avatars: "https://i.imgur.com/nlhLi3I.png",
+//       handle: "@rd",
+//     },
+//     content: {
+//       text: "Je pense , donc je suis",
+//     },
+//     created_at: 1461113959088,
+//   },
+// ];
 
 const createTweetElement = function (tweetData) {
   // initialize element by adding article with class new-tweet-container (much like the original new container)
@@ -40,7 +38,7 @@ const createTweetElement = function (tweetData) {
   <article class="new-tweet-container">
   <header class="user-info"> 
     <div class="info">
-    <img src="${tweetData.user.avatars}" />
+    <img src="${tweetData.user.avatars}" class="info-pic"/>
       <h3>${tweetData.user.name}</h3>
     </div>
     <span class="handle">${tweetData.user.handle}</span>
@@ -62,30 +60,33 @@ const createTweetElement = function (tweetData) {
   // return tweetEl;
 };
 
-// const $tweet = createTweetElement(tweetData);
-
-// // // Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-
-// $(".append-tweet").append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
+// renders tweet by looping through database
 const renderTweets = function (tweets) {
-  // gets the html contents of the prepend-tweet div created in the html
-  // let tweetsContainer = $(".prepend-tweet").html("");
-  // loop through each user and prepend their information the template tweet element
+  // empties the html of any appended tweets so that the new tweets can load
+  $(".all-tweets-container").empty();
+
   tweets.forEach((tweet) => {
-    $(".prepend-tweet").prepend(createTweetElement(tweet));
+    $(".all-tweets-container").prepend(createTweetElement(tweet)); // change class to what it is rather than what it does - prepend tweet ********
     // console.log(tweet);
   });
   // console.log(tweetsContainer.innerHTML);
 };
 
-// $("body").append("<p>IS THIS WORKING</p>");
+// loads tweets onto page
+const loadtweets = function () {
+  $.ajax("/tweets", {
+    method: "GET",
+    dataType: "json",
+  }).then((result) => {
+    renderTweets(result);
+  });
+};
 
 // have this so that the page loads once this is fully completed
 $(document).ready(function () {
+  loadtweets();
   // run to render the tweet
-  renderTweets(tweetData);
+  // renderTweets(tweetData);
 
   // Form Submission Event Handler - prevent default of reloading page
   const $form = $("#tweet-form");
@@ -99,9 +100,11 @@ $(document).ready(function () {
         // clears the form after post request
         $("#tweet-text").val("");
         // triggers on input change event to reload composer-char-counter logic
-        $("#tweet-text").trigger("input");
+        $("#tweet-text").trigger("input"); // used to reset the addRed class
         // serialized data
-        console.log(data);
+        // console.log(data);
+
+        loadtweets();
       })
       .catch((error) => console.log(error)); // catches any error
 
