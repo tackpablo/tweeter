@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  console.log("Composer script loaded!");
+  // console.log("Composer script loaded!");
 
   $("#tweet-text").on("input", function () {
     // console.log("this.value: ", $(this).val().length); //The this keyword is a reference to the text area

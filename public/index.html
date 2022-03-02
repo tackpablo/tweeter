@@ -28,6 +28,9 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- timeagoJS script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/reset.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -73,6 +76,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      
       <!-- New Tweet input -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
@@ -90,8 +94,9 @@
         </form>
       </section>
 
-      <!-- New Tweet containers-->
-        <article class="new-tweet-container">
+       <!-- New Tweet containers -->
+      <!-- <div class="new-tweet-container">
+        <article>
           <header class="user-info">
             <div class="info">
               <i class="fa-solid fa-ghost"></i>
@@ -109,6 +114,10 @@
             </div>
           </footer>
         </article>
+      </div>  -->
+
+      <!-- Prepend Tweets here -->
+        <div class="prepend-tweet"></div>
 
     </main>
   </body>
