@@ -2,7 +2,7 @@
   height: 520px;
   width: 100%;
   background-color: #f4f1ec;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+
   padding-top: 120px;
 }
 
@@ -11,4 +11,21 @@
   align-items: center;
   z-index: -1;
   display: flex;
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media only screen and (min-width: 1024px) {
+  /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
+  body > header {
+    float: left;
+    width: 30%;
+    height: 40%;
+    margin-top: 3.5em;
+    position: fixed;
+    margin-left: -0.5em;
+  }
+
+  .header-container {
+    background-color: transparent;
+  }
 }

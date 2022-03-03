@@ -21,7 +21,6 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: Source Sans Pro, sans-serif;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 }
 
 /*
@@ -32,4 +31,14 @@ body {
   width: 90%;
   background-color: #f4f1ec;
   margin: auto;
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media only screen and (min-width: 1024px) {
+  /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
+  main {
+    margin: 0 2em;
+    width: 60%;
+    height: auto;
+  }
 }
