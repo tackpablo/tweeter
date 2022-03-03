@@ -93,6 +93,16 @@ const loadtweets = function () {
 
 // have this so that the page loads once this is fully completed
 $(document).ready(function () {
+  // event listener for hovering over nav bar button
+  const $toggle = $(".option");
+  const $input = $("#tweet-form");
+  const $textarea = $("textarea");
+  $toggle.click(function () {
+    $input.toggle();
+    $textarea.focus();
+    $textarea.val("");
+  });
+
   loadtweets();
   // run to render the tweet
   // renderTweets(tweetData);
@@ -104,6 +114,7 @@ $(document).ready(function () {
 
     const $textarea = $("textarea").val();
     const $errorBox = $(".error-box").text("").slideUp();
+
     if ($textarea.length > 140)
       return $errorBox
         .slideDown()
