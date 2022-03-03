@@ -39,9 +39,9 @@
   color: red;
   background: #f4f1ec;
   text-align: center;
-  border: 2px dotted red;
   left: calc(50% - 150px);
   z-index: 3;
-  display: none;
+  display: inline-flex;
   border-radius: 15px;
+  justify-content: center;
 }

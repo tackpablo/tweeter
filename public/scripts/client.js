@@ -119,7 +119,7 @@ $(document).ready(function () {
       return $errorBox
         .slideDown()
         .text(
-          "⚠💥⚠ Tweet is longer than 140 characters (140 is the limit)! ⚠💥⚠"
+          "⚠💥⚠ Tweet is longer than 140 characters (140 characters is the limit)! ⚠💥⚠"
         );
 
     if ($textarea === "" || $textarea === null)
