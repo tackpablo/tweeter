@@ -33,6 +33,7 @@ const createTweetElement = function (tweetData) {
   // initialize element by adding article with class new-tweet-container (much like the original new container)
   // let $tweet = $("<article>").addClass("new-tweet-container");
 
+  // escape function that prevents cross script injections
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -83,9 +84,11 @@ const loadtweets = function () {
   $.ajax("/tweets", {
     method: "GET",
     dataType: "json",
-  }).then((result) => {
-    renderTweets(result);
-  });
+  })
+    .then((result) => {
+      renderTweets(result);
+    })
+    .catch((error) => alert(error));
 };
 
 // have this so that the page loads once this is fully completed
@@ -100,11 +103,18 @@ $(document).ready(function () {
     event.preventDefault();
 
     const $textarea = $("textarea").val();
+    const $errorBox = $(".error-box").text("").slideUp();
     if ($textarea.length > 140)
-      return alert("Your tweet is longer than 140 characters!");
+      return $errorBox
+        .slideDown()
+        .text(
+          "⚠💥⚠ Tweet is longer than 140 characters (140 is the limit)! ⚠💥⚠"
+        );
 
     if ($textarea === "" || $textarea === null)
-      return alert("You can't submit an empty tweet you twit!");
+      return $errorBox
+        .slideDown()
+        .text("⚠💥⚠ You can't submit an empty tweet you twit! ⚠💥⚠");
 
     // making request for posting to database - this refers to form data
     const data = $(this).serialize();
@@ -119,7 +129,7 @@ $(document).ready(function () {
 
         loadtweets();
       })
-      .catch((error) => console.log(error)); // catches any error
+      .catch((error) => alert(error)); // catches any error
 
     // resets counter to 140 after request is sent
     // $(this).find(".counter").text(140);

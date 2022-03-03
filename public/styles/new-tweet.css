@@ -32,3 +32,16 @@
 .error {
   color: red;
 }
+
+.error-box {
+  width: 100%;
+  font-size: 1em;
+  color: red;
+  background: #f4f1ec;
+  text-align: center;
+  border: 2px dotted red;
+  left: calc(50% - 150px);
+  z-index: 3;
+  display: none;
+  border-radius: 15px;
+}

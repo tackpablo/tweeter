@@ -14,6 +14,12 @@
 
 .fa-angles-down {
   color: red;
+  align-self: center;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
