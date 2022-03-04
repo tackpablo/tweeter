@@ -66,9 +66,7 @@
   justify-content: center;
 }
 
-/* Laptops / Desktops: minimum width of 1024px */
 @media only screen and (min-width: 1024px) {
-  /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
   .navbar {
     background-color: #4056a1;
   }

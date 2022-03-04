@@ -15,9 +15,7 @@
   color: #ffff;
 }
 
-/* Laptops / Desktops: minimum width of 1024px */
 @media only screen and (min-width: 1024px) {
-  /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
   body > header {
     float: left;
     width: 30%;

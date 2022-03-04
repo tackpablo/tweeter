@@ -46,9 +46,7 @@
   justify-content: center;
 }
 
-/* Laptops / Desktops: minimum width of 1024px */
 @media only screen and (min-width: 1024px) {
-  /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
   .container {
     float: right;
     width: 60%;
