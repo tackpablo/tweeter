@@ -1,18 +1,62 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simplified single-page Twitter clone using HTML, CSS, JS, jQuery and AJAX. This is a front end (client-side) project.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+# How to use Tweeter and Features
 
-## Getting Started
+- Minimalistic Single Page Application (SPA) design
+- SPA utilizing AJAX requests to prevent page refreshes
+- Navigation bar to toggle tweet inputs field
+- Scroll to top button for ease of use
+- Live character count (maximum 140 character limit)
+- Error handling for empty inputs as well as exceeding character count
+- Responsive design that supports different screen sizes (Fluid Layout Shifter)
+- Protected against simple XSS injection for safe use
 
-1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
-2. Clone your repository onto your local device.
-3. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+# Final Product
 
-## Dependencies
+### Desktop View
 
-- Express
-- Node 5.10.x or above
+!["Desktop View"]()
+
+### Mobile/Tablet View
+
+!["Mobile/Tablet View"]()
+
+# Features
+
+### Submit Tweets
+
+!["Submit Tweets"]()
+
+### Toggle Input Field
+
+!["Toggle Input Field"]()
+
+### Scroll Up Button
+
+!["Scroll Up Button"]()
+
+# Errors
+
+### Exceeding Character Count
+
+!["Exceeding Character Count"]()
+
+### Empty Inputs
+
+!["Empty Inputs"]()
+
+# Dependencies
+
+- Body-Parser
+- Chance
+- Node + Express
+- MD5
+- sass
+
+# Getting Started
+
+- Install all dependencies (using the `npm i` command).
+- Run the development web server using the `npm start` command.
+- Navigate to http://localhost:8080/ to get started and start Tweeting!
