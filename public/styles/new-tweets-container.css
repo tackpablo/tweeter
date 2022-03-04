@@ -4,6 +4,10 @@
   margin-bottom: 1em;
 }
 
+article:hover {
+  box-shadow: 0.1em 0.1em 0.1em 0.1em #4056a1;
+}
+
 .fa-ghost {
   padding: 0 0.5em;
 }
@@ -11,6 +15,14 @@
 .handle {
   padding: 0 0.5em;
   color: #4056a1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-wrap: anywhere;
+}
+
+.info-user {
+  overflow-wrap: anywhere;
 }
 
 .tweet {
@@ -56,8 +68,4 @@
 .fa-retweet:hover,
 .fa-heart:hover {
   color: #4056a1;
-}
-
-article:hover {
-  box-shadow: 0.1em 0.1em 0.1em 0.1em #4056a1;
 }

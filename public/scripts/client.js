@@ -46,13 +46,13 @@ const createTweetElement = function (tweetData) {
   <header class="user-info"> 
     <div class="info">
     <img src="${escape(tweetData.user.avatars)}" class="info-pic"/>
-      <h3>${escape(tweetData.user.name)}</h3>
+      <h3 class="info-user">${escape(tweetData.user.name)}</h3>
     </div>
-    <span class="handle">${escape(tweetData.user.handle)}</span>
+    <div class="handle">${escape(tweetData.user.handle)}</div>
   </header>
   <div class="tweet">${escape(tweetData.content.text)}</div>
   <footer class="tweet-icons">
-    <span>${timeago.format(escape(tweetData.created_at))}</span>
+    <span>${timeago.format(tweetData.created_at)}</span>
     <div class="icons">
       <i class="fa-solid fa-flag"></i>
       <i class="fa-solid fa-retweet"></i>
@@ -73,7 +73,7 @@ const renderTweets = function (tweets) {
   $(".all-tweets-container").empty();
 
   tweets.forEach((tweet) => {
-    $(".all-tweets-container").prepend(createTweetElement(tweet)); // change class to what it is rather than what it does - prepend tweet ********
+    $(".all-tweets-container").prepend(createTweetElement(tweet));
     // console.log(tweet);
   });
   // console.log(tweetsContainer.innerHTML);
@@ -93,6 +93,19 @@ const loadtweets = function () {
 
 // have this so that the page loads once this is fully completed
 $(document).ready(function () {
+  // scroll function
+  $(window).scroll(function () {
+    if ($(this).scrollTop()) {
+      $("#toTop").fadeIn();
+    } else {
+      $("#toTop").fadeOut();
+    }
+  });
+
+  $("#toTop").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+  });
+
   // event listener for hovering over nav bar button
   const $toggle = $(".option");
   const $input = $("#tweet-form");
@@ -104,8 +117,6 @@ $(document).ready(function () {
   });
 
   loadtweets();
-  // run to render the tweet
-  // renderTweets(tweetData);
 
   // Form Submission Event Handler - prevent default of reloading page
   const $form = $("#tweet-form");
@@ -115,17 +126,19 @@ $(document).ready(function () {
     const $textarea = $("textarea").val();
     const $errorBox = $(".error-box").text("").slideUp();
 
-    if ($textarea.length > 140)
+    if ($textarea.length > 140) {
       return $errorBox
         .slideDown()
         .text(
           "⚠💥⚠ Tweet is longer than 140 characters (140 characters is the limit)! ⚠💥⚠"
         );
+    }
 
-    if ($textarea === "" || $textarea === null)
+    if ($textarea === "" || $textarea === null) {
       return $errorBox
         .slideDown()
         .text("⚠💥⚠ You can't submit an empty tweet you twit! ⚠💥⚠");
+    }
 
     // making request for posting to database - this refers to form data
     const data = $(this).serialize();

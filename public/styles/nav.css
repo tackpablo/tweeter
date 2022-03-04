@@ -17,15 +17,6 @@
   align-self: center;
 }
 
-.option {
-  display: flex;
-  flex-direction: column;
-  color: #ffff;
-  background-color: #4056a1;
-  transition: 0.3s;
-  transition: transform;
-}
-
 @keyframes arrow-move {
   0% {
     top: 0px;
@@ -43,15 +34,21 @@
     top: 0px;
   }
 }
-
-// targets child of option class to make only icon to transition
+.option {
+  display: flex;
+  flex-direction: column;
+  color: #ffff;
+  background-color: #4056a1;
+  transition: 0.3s;
+  transition: transform;
+  /*  targets child of option class to make only icon to transition */
+}
 .option:hover > .arrow-move {
   animation-name: arrow-move;
   animation-duration: 0.9s;
   animation-iteration-count: infinite;
   position: relative;
 }
-
 .option:hover {
   cursor: pointer;
 }
@@ -67,4 +64,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media only screen and (min-width: 1024px) {
+  /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
+  .navbar {
+    background-color: #4056a1;
+  }
 }

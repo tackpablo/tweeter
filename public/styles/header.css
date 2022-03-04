@@ -1,9 +1,8 @@
 .header-container {
-  height: 520px;
+  height: 400px;
   width: 100%;
-  background-color: #f4f1ec;
-
-  padding-top: 120px;
+  background-color: #4056a1;
+  margin-top: 120px;
 }
 
 .user {
@@ -11,6 +10,9 @@
   align-items: center;
   z-index: -1;
   display: flex;
+}
+.user > h2 {
+  color: #ffff;
 }
 
 /* Laptops / Desktops: minimum width of 1024px */
@@ -20,12 +22,18 @@
     float: left;
     width: 30%;
     height: 40%;
-    margin-top: 3.5em;
+    margin-top: 3em;
     position: fixed;
     margin-left: -0.5em;
   }
 
   .header-container {
     background-color: transparent;
+    margin-top: 120px;
+    height: 520px;
+  }
+
+  .user > h2 {
+    color: #545149;
   }
 }

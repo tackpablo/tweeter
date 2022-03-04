@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
@@ -15,7 +16,6 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -26,11 +26,22 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
 .container {
   width: 90%;
   background-color: #f4f1ec;
   margin: auto;
+  margin-top: 1em;
+}
+
+#toTop {
+  padding: 0.5em;
+  background-color: #4056a1;
+  color: #f4f1ec;
+  border-radius: 25px;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  display: none;
 }
 
 /* Laptops / Desktops: minimum width of 1024px */
@@ -40,5 +51,10 @@ body {
     margin: 0 2em;
     width: 60%;
     height: auto;
+  }
+
+  #toTop {
+    bottom: 1em;
+    right: 2em;
   }
 }
