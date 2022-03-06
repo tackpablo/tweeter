@@ -11,7 +11,9 @@ const createTweetElement = function (tweetData) {
   <article class="new-tweet-container">
   <header class="user-info"> 
     <div class="info">
-    <img src="${escape(tweetData.user.avatars)}" class="info-pic"/>
+    <img src="${escape(
+      tweetData.user.avatars
+    )}" alt="user avatar" class="info-pic"/>
       <h3 class="info-user">${escape(tweetData.user.name)}</h3>
     </div>
     <div class="handle">${escape(tweetData.user.handle)}</div>

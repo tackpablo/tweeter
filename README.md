@@ -17,35 +17,35 @@ Tweeter is a simplified single-page Twitter clone using HTML, CSS, JS, jQuery an
 
 ### Desktop View
 
-!["Desktop View"]()
+!["Desktop View"](https://github.com/tackpablo/tweeter/blob/master/public/images/Desktop.png)
 
 ### Mobile/Tablet View
 
-!["Mobile/Tablet View"]()
+!["Mobile/Tablet View"](https://github.com/tackpablo/tweeter/blob/master/public/images/MobileTablet.png)
 
 # Features
 
 ### Submit Tweets
 
-!["Submit Tweets"]()
+!["Submit Tweets"](https://github.com/tackpablo/tweeter/blob/master/public/images/Submit%20Tweet.gif)
 
 ### Toggle Input Field
 
-!["Toggle Input Field"]()
+!["Toggle Input Field"](https://github.com/tackpablo/tweeter/blob/master/public/images/Toggle.gif)
 
 ### Scroll Up Button
 
-!["Scroll Up Button"]()
+!["Scroll Up Button"](https://github.com/tackpablo/tweeter/blob/master/public/images/ScrollUp.gif)
 
 # Errors
 
 ### Exceeding Character Count
 
-!["Exceeding Character Count"]()
+!["Exceeding Character Count"](https://github.com/tackpablo/tweeter/blob/master/public/images/CharCount.gif)
 
 ### Empty Inputs
 
-!["Empty Inputs"]()
+!["Empty Inputs"](https://github.com/tackpablo/tweeter/blob/master/public/images/EmtpyInput.gif)
 
 # Dependencies
 
