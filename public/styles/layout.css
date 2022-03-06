@@ -27,10 +27,6 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-html {
-  background-color: #f4f1ec;
-}
-
 .container {
   width: 90%;
   background-color: #f4f1ec;
